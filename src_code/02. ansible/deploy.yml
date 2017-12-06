@@ -1,0 +1,6 @@
+---
+- hosts: demo
+  vars:
+    http_port: 80
+  tasks:
+    - include: 'install_nginx.yml'

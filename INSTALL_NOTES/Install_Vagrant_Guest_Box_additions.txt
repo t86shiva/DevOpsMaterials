@@ -1,0 +1,14 @@
+sudo apt-get update -y && sudo apt-get upgrade -y 
+sudo apt-get install -y build-essential linux-headers-$(uname -r)
+cd /opt
+sudo wget -c http://download.virtualbox.org/virtualbox/5.1.22/VBoxGuestAdditions_5.1.22.iso   \
+                       -O VBoxGuestAdditions_5.1.22.iso  
+sudo mount VBoxGuestAdditions_5.1.22.iso  -o loop /mnt
+cd /mnt
+sudo sh VBoxLinuxAdditions.run --nox11
+cd /opt
+sudo rm *.iso
+#sudo /etc/init.d/vboxadd setup
+#sudo chkconfig --add vboxadd
+#sudo chkconfig vboxadd on
+sudo umount /mnt 
